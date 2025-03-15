@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { Button } from "./ui/button"
+import { UserMenu } from "./user-menu"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -27,14 +27,7 @@ export function Navbar() {
         <Link href="/" className="text-2xl font-bold">
           Alina Wellness
         </Link>
-        <div className="space-x-4">
-          <Button variant="ghost" asChild>
-            <Link href="/login">Login</Link>
-          </Button>
-          <Button asChild>
-            <Link href="/signup">Sign up</Link>
-          </Button>
-        </div>
+        <UserMenu />
       </div>
     </nav>
   )
