@@ -1,7 +1,5 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { authClient } from "@/utils/auth-client"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,22 +7,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { useAuth } from "@/hooks/use-auth"
 
 export function UserMenu() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
-
-  useEffect(() => {
-    const checkAuth = async () => {
-      const session = await authClient.getSession()
-      setIsAuthenticated(!!session)
-    }
-    checkAuth()
-  }, [])
-
-  const handleLogout = async () => {
-    await authClient.signOut()
-    setIsAuthenticated(false)
-  }
+  const { isAuthenticated, signOut } = useAuth()
 
   return (
     <DropdownMenu>
@@ -54,7 +40,7 @@ export function UserMenu() {
       <DropdownMenuContent className="w-48" align="end">
         <DropdownMenuGroup>
           {isAuthenticated ? (
-            <DropdownMenuItem onClick={handleLogout}>
+            <DropdownMenuItem onClick={signOut}>
               Logout
             </DropdownMenuItem>
           ) : (

@@ -2,16 +2,26 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { useAuth } from "@/hooks/use-auth"
 
-export default function HeroSection() {
+export function HeroSection() {
+  const { isAuthenticated, userName, userImage } = useAuth()
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#8B0000]/10 to-[#7A9B63]/10">
       <div className="container mx-auto px-4 py-12 flex flex-col lg:flex-row items-center justify-between gap-12">
         <div className="flex-1 text-center lg:text-left z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#8B0000]">
-            Transform Your Life<br />
-            <span className="text-[#7A9B63]">With Holistic Wellness</span>
-          </h1>
+          {isAuthenticated ? (
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#8B0000]">
+              Hi, <span className="text-[#7A9B63]">{userName}</span>!<br />
+              <span className="text-2xl md:text-3xl lg:text-4xl text-gray-700">Welcome to Your Wellness Journey</span>
+            </h1>
+          ) : (
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#8B0000]">
+              Transform Your Life<br />
+              <span className="text-[#7A9B63]">With Holistic Wellness</span>
+            </h1>
+          )}
           <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl">
             Experience the perfect harmony of mind, body, and soul at Alina Wellness. 
             Our expert team provides personalized care to help you achieve optimal health 
