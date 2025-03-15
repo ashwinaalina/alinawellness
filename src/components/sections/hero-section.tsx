@@ -8,7 +8,7 @@ export function HeroSection() {
   const { isAuthenticated, userName, userImage } = useAuth()
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#8B0000]/10 to-[#7A9B63]/10">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       <div className="container mx-auto px-4 py-12 flex flex-col lg:flex-row items-center justify-between gap-12">
         <div className="flex-1 text-center lg:text-left z-10">
           {isAuthenticated ? (
@@ -44,7 +44,7 @@ export function HeroSection() {
           </div>
         </div>
         <div className="flex-1 relative h-[400px] lg:h-[600px] w-full max-w-[600px]">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#8B0000]/20 to-[#7A9B63]/20 rounded-full blur-3xl transform -translate-y-1/2"></div>
+          <div className="absolute inset-0 rounded-full blur-3xl transform -translate-y-1/2"></div>
           <Image
             src="/wellness-hero.svg"
             alt="Wellness Illustration"
@@ -54,7 +54,7 @@ export function HeroSection() {
           />
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-24"></div>
     </section>
   );
 }
