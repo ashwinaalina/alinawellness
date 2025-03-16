@@ -43,6 +43,9 @@ export function Navbar() {
           <Link href="/testimonials" className="text-gray-700 hover:text-[#8B0000] transition-colors">
             Testimonials
           </Link>
+          <Link href="/gallery" className="text-gray-700 hover:text-[#8B0000] transition-colors">
+            Gallery
+          </Link>
           <Link href="/sales" className="text-gray-700 hover:text-[#8B0000] transition-colors">
             Offers
           </Link>
