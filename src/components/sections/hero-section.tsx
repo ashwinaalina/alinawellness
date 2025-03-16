@@ -31,6 +31,7 @@ export function HeroSection() {
             <Button 
               className="bg-[#8B0000] hover:bg-[#8B0000]/90 text-white px-8 py-6 text-lg"
               size="lg"
+              onClick={() => window.location.href = '/booking'}
             >
               Book Consultation
             </Button>

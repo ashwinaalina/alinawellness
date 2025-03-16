@@ -8,6 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useAuth } from "@/hooks/use-auth"
+import Link from "next/link"
 
 export function UserMenu() {
   const { isAuthenticated, signOut } = useAuth()
@@ -40,9 +41,16 @@ export function UserMenu() {
       <DropdownMenuContent className="w-48" align="end">
         <DropdownMenuGroup>
           {isAuthenticated ? (
-            <DropdownMenuItem onClick={signOut}>
-              Logout
-            </DropdownMenuItem>
+            <>
+              <DropdownMenuItem asChild>
+                <Link href="/profile" className="w-full cursor-pointer">
+                  Profile
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={signOut}>
+                Logout
+              </DropdownMenuItem>
+            </>
           ) : (
             <>
               <DropdownMenuItem asChild>
