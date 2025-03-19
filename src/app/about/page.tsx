@@ -211,6 +211,81 @@ export default function AboutPage() {
             </Button>
           </div>
         </div>
+
+        {/* Google Map */}
+        <div className="bg-white rounded-lg shadow-md p-8 mb-12">
+          <h2 className="text-3xl font-bold text-[#8B0000] mb-6 text-center">Find Us</h2>
+          <div className="mt-6 text-center">
+            <p className="text-gray-600 mb-4">
+              We're conveniently located in Sector 12, Dwarka, New Delhi. Our wellness center is easily accessible by public transportation and has ample parking space for visitors.
+            </p>
+          </div>
+          <div className="w-full h-96 rounded-lg overflow-hidden">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14016.068850514095!2d77.03138007431641!3d28.589351500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b1163e2f8bb%3A0x40ea9f1a930c303a!2sDwarka%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1686761234567!5m2!1sen!2sin" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen={true} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <div className="mt-6 text-center">
+            <p className="text-gray-600 mb-4">
+              We're conveniently located in Sector 12, Dwarka, New Delhi. Our wellness center is easily accessible by public transportation and has ample parking space for visitors.
+            </p>
+            <Button className="bg-[#8B0000] hover:bg-[#8B0000]/90 text-white" asChild>
+              <Link href="https://goo.gl/maps/YourActualGoogleMapsLink" target="_blank" rel="noopener noreferrer">
+                Get Directions
+              </Link>
+            </Button>
+          </div>
+        </div>
+
+        {/* Contact Form */}
+        <div className="bg-white rounded-lg shadow-md p-8 mb-12">
+          <h2 className="text-3xl font-bold text-[#8B0000] mb-6 text-center">Send Us a Message</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+              <input 
+                type="text" 
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7A9B63] focus:border-transparent"
+                placeholder="John Doe"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+              <input 
+                type="email" 
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7A9B63] focus:border-transparent"
+                placeholder="john@example.com"
+              />
+            </div>
+            <div className="md:col-span-2">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+              <input 
+                type="text" 
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7A9B63] focus:border-transparent"
+                placeholder="How can we help you?"
+              />
+            </div>
+            <div className="md:col-span-2">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+              <textarea 
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7A9B63] focus:border-transparent h-32"
+                placeholder="Please provide details about your inquiry..."
+              ></textarea>
+            </div>
+            <div className="md:col-span-2 flex justify-center">
+              <Button className="bg-[#8B0000] hover:bg-[#8B0000]/90 text-white px-8">
+                Send Message
+              </Button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );
