@@ -39,6 +39,7 @@ export function HeroSection() {
               variant="outline" 
               className="border-[#7A9B63] text-[#7A9B63] hover:bg-[#7A9B63]/10 px-8 py-6 text-lg"
               size="lg"
+              onClick={() => window.location.href = '/products'}
             >
               Explore Services
             </Button>
